@@ -40,30 +40,7 @@ public class Process {
         return processId;
     }
 //
-    public void start(int flag) {
-        while (!Streams.isEmpty()) {
-            for (int i = 0; i < Streams.size(); i++) {
-                flag = TIME;
-                while (Streams.get(i).isTime() && flag > 0) {
-                    print(" ïðîöåññ", i);
-                    Streams.get(i).timeReduction();
-                    flag--;
-                    if (flag == 0 && Streams.get(i).getMaxTimeOfStream() != 0) {
-                        print(" ïðèîñòîíîâëåí ", i);
-                        System.out.println();
-                        break;
-                    }
-                    if (Streams.get(i).getMaxTimeOfStream() == 0) {
-                        print(" çàâåðøåí ", i);
-                        System.out.println();
-                        Streams.remove(i);
-                        --i;
-                        break;
-                    }
-                }
-            }
-        }
-    }
+    
 
     public void print(String str, int i) {
 		/*System.out.println(Streams.get(i).getProcId() + "  "
